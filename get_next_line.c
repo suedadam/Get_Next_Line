@@ -66,6 +66,17 @@ void	ft_zerostring(char *str)
 		*str++ = '\0';
 }
 
+int 	empty_check(char *str, int i)
+{
+	while (str[i])
+	{
+		if (str[i] != '\n')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int		get_next_line(const int fd, char **line)
 {
 	int r;
@@ -131,6 +142,11 @@ int		get_next_line(const int fd, char **line)
 	}
 	while ((r = read(fd, &(*line)[count], BUFF_SIZE)) > 0)
 	{
+		if (empty_check(*line, r))
+		// {
+		// 	printf("Empty Check is = \"%s\" (\"%c\")\n", &(*line)[r], (*line)[r]);
+			(*line)[r - 1] = '\0';
+		// }
 		count += r;
 		if ((found = ft_endline(*line)) > 0)
 		{
@@ -161,6 +177,31 @@ int		get_next_line(const int fd, char **line)
 	(*line)[count] = '\0';
 	return (**line ? 1 : 0);
 }
+
+// int
+// main(void)
+// {
+// 	char	*line;
+// 	int 	ret;
+// 	int 	fd;
+// 	int 	out;
+// 	int 	p[2];
+
+// 	out = dup(1);
+// 	pipe(p);
+
+// 	fd = 1;
+// 	dup2(p[1], fd);
+// 	write(fd, "abc\n\n", 5);
+// 	close(p[1]);
+// 	dup2(out, fd);
+// 	ret = get_next_line(p[0], &line);
+// 	printf("\"(%p) %s\"\n", line, line);
+// 	ret = get_next_line(p[0], &line);
+// 	printf("\"(%p) %s\"\n", line, line);
+// 	ret = get_next_line(p[0], &line);
+// 	printf("\"(%p) %s\"\n", line, line);
+// }
 
 // int				main(void)
 // {
