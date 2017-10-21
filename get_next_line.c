@@ -6,7 +6,7 @@
 /*   By: asyed <asyed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/08 16:33:49 by asyed             #+#    #+#             */
-/*   Updated: 2017/10/20 20:33:57 by asyed            ###   ########.fr       */
+/*   Updated: 2017/10/20 20:38:40 by asyed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,6 @@ int		storage_contains(char **overflow, char **line)
 	}
 	return (0);
 }
-
-/*
-** ToDo:
-** Chanage (*line)[i] to resize memory properly to
-** prevent shitty memory usage habits.
-** Error handle all mallocs, etc.
-*/
 
 int		get_next_line(const int fd, char **line)
 {
