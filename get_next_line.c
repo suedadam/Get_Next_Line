@@ -30,7 +30,7 @@ int		line_split(char **overflow, char **line, int *count)
 		{
 			if ((*line)[i + 1])
 			{
-				*overflow = (char *)ft_memalloc(*count - i * SCHAR);
+				*overflow = (char *)ft_memalloc((*count - i) * SCHAR);
 				*overflow = ft_strncpy(*overflow, &(*line)[i + 1], *count - i);
 			}
 			(*line)[i] = '\0';
@@ -53,7 +53,7 @@ int		storage_contains(char **overflow, char **line)
 		if ((*overflow)[i] == '\n')
 		{
 			length = ft_strlen(*overflow);
-			save = ft_memalloc(length - i * SCHAR);
+			save = ft_memalloc((length - i) * SCHAR);
 			save = ft_strcpy(save, &(*overflow[i + 1]));
 			*line = ft_strncpy(*line, *overflow, i);
 			(*line)[i] = '\0';
@@ -78,7 +78,7 @@ int		get_next_line(const int fd, char **line)
 		return (-1);
 	if (!overflow)
 		overflow = (char **)ft_memalloc(FDS * sizeof(char *));
-	*line = (char *)ft_memalloc(BUFF_SIZE + 1 * SCHAR);
+	*line = (char *)ft_memalloc((BUFF_SIZE + 1) * SCHAR);
 	if (overflow[fd] && (res = storage_contains(&(overflow[fd]), line)))
 		return (res);
 	while ((r = read(fd, &(*line)[*count], BUFF_SIZE)) > 0 && (*count += r))
@@ -87,7 +87,7 @@ int		get_next_line(const int fd, char **line)
 		else if (r == BUFF_SIZE)
 		{
 			*line = (char *)ft_realloc(*line, (*count + BUFF_SIZE + 1) * SCHAR);
-			ft_bzero(&(*line)[*count], BUFF_SIZE + 1 * SCHAR);
+			ft_bzero(&(*line)[*count], (BUFF_SIZE + 1) * SCHAR);
 		}
 	if (r < 0)
 		return (-1);
