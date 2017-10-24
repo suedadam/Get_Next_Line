@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 # include <strings.h>
 # define BUFF_SIZE 1
-# define FDS 256
+# define FDS 3000
 # define SCHAR sizeof(char)
 
 int				get_next_line(const int fd, char **line);
