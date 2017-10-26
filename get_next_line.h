@@ -6,7 +6,7 @@
 /*   By: asyed <asyed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/08 16:33:57 by asyed             #+#    #+#             */
-/*   Updated: 2017/10/20 20:38:32 by asyed            ###   ########.fr       */
+/*   Updated: 2017/10/26 12:06:58 by asyed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 # include <strings.h>
 # define BUFF_SIZE 1
-# define FDS 3000
+# define FDS 20
 # define SCHAR sizeof(char)
 
 int				get_next_line(const int fd, char **line);
