@@ -6,7 +6,7 @@
 /*   By: asyed <asyed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/08 16:33:57 by asyed             #+#    #+#             */
-/*   Updated: 2017/10/27 14:46:42 by asyed            ###   ########.fr       */
+/*   Updated: 2017/10/30 13:30:59 by asyed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ size_t			ft_strlen(const char *s);
 char			*ft_strcpy(char *dest, const char *src);
 void			ft_bzero(void *s, size_t n);
 char			*ft_strncpy(char *dest, const char *src, size_t n);
+void			*ft_realloc_safe(void *src, size_t old_size, size_t new_size);
 
 #endif
