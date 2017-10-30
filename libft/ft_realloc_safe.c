@@ -6,13 +6,12 @@
 /*   By: asyed <asyed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 12:16:25 by asyed             #+#    #+#             */
-/*   Updated: 2017/10/30 13:30:42 by asyed            ###   ########.fr       */
+/*   Updated: 2017/10/30 16:15:34 by asyed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-
 
 void	*ft_realloc_safe(void *src, size_t old_size, size_t new_size)
 {

@@ -6,7 +6,7 @@
 /*   By: asyed <asyed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/08 16:33:49 by asyed             #+#    #+#             */
-/*   Updated: 2017/10/30 14:42:12 by asyed            ###   ########.fr       */
+/*   Updated: 2017/10/30 16:14:57 by asyed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int		line_split(char **overflow, char **line, int *count)
 
 int		init(const int fd, char ***line, char ***overflow)
 {
-	if (fd < 0 || !*line || FDS <= 0 || BUFF_SIZE <= 0)
+	if (fd < 0 || fd > 5000 || !*line || FDS <= 0 || BUFF_SIZE <= 0)
 		return (-1);
 	if (!*overflow)
 	{
